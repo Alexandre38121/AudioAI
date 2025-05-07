@@ -1,8 +1,6 @@
 services:
   - type: web
-    name: extract-audio-api
-    env: python
-    buildCommand: ""
-    startCommand: "python app.py"
+    name: audio-api
+    env: docker
     plan: free
     region: frankfurt
