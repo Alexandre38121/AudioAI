@@ -17,10 +17,13 @@ def extract_audio():
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': output_filename,
+        'ffmpeg_location': '/usr/bin/ffmpeg',  # ✅ correction ici
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
+            'preferredquality': '192',
         }],
+        'postprocessor_args': ['-f', 'bestaudio'],
         'quiet': True
     }
 
